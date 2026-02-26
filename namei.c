@@ -1170,7 +1170,7 @@ static int ntfs_mkdir(struct user_namespace *mnt_userns, struct inode *dir,
 	}
 
 	d_instantiate_new(dentry, VFS_I(ni));
-	return ERR_PTR(err);
+	return NULL;
 #else
 	if (IS_ERR(ni)) {
 		err = PTR_ERR(ni);
